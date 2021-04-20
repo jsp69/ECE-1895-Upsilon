@@ -256,6 +256,7 @@ void loop() {
     disp(points);
     
  }else if(state==2){    //State for Bop It
+  tone(Speaker,700,1000);
     while(timer>0){
       disp(points);
       if(digitalRead(Bop)==HIGH){
@@ -269,6 +270,7 @@ void loop() {
     state=5;            //If the task is not completed, go to fail state
     
  }else if(state==3){    //State for Shake It
+  tone(Speaker,500,1000);
     while(timer>0){
       disp(points);
       if(digitalRead(Tilt)==LOW){
@@ -282,6 +284,7 @@ void loop() {
     state=5;            //If the task is not completed, go to fail state
   
  }else if(state==4){    //State for Twist It
+  tone(Speaker,900,1000);
   PrevTwist=analogRead(Twist);
     while(timer>0){
       disp(points);
@@ -298,7 +301,7 @@ void loop() {
  }else if(state==5){    //State for failure
   disp(points);
   points=0;
-  tone(Speaker,1000);
+  tone(Speaker,250);
   delay(1000);
   noTone(Speaker);
   disp(points);
