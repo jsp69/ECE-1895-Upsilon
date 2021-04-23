@@ -30,6 +30,7 @@ void disp(int x){
   
   if(dispMode==0){    //Display 10s digit
     dispMode=1;
+    digitalWrite(SegMode,HIGH);
     switch(tens){
      case 0:
       for(int i=0;i<7;i++){
@@ -124,6 +125,7 @@ void disp(int x){
     }
   }else{           //Display ones digit
     dispMode=0;
+     digitalWrite(SegMode,LOW);
     switch(ones){
      case 0:
       for(int i=0;i<7;i++){
